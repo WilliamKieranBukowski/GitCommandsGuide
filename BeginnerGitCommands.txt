@@ -1,0 +1,88 @@
+Git Commands!!!
+_________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+______________________________________________________________________________________________________________________________________________________________________________________________________________
+
+##Create a new repo:
+
+	git init <nameOfRepo>
+
+
+##Add files to to queue of being committed:
+	
+	git add *      	   | adds all files in the current directory
+	git add <fileName> | adds only named file
+
+
+## *** Ignore certain files, i.e. leave out stuff that doesn't need to be shared ***
+
+	1. Create a filed named .gitignore
+	2. add a list of files that are NOT to be added to your .gitignore file
+	3. format the list properly:
+		
+		To include a file in .gitignore, and thus ignore it when adding for a commit,
+		simply write it with no space, starting with the colon:
+			
+				# Byte-compiled / optimized / DLL files
+				__pycache__/
+				*.py[cod]
+				*$py.class
+		
+				# Distribution / packaging
+				.Python
+				build/
+				develop-eggs/
+				dist/
+				downloads/ 
+
+		... any of the files that are listed will be ignored, unless they are preceded
+			by a / ( this adds the file to be committed)
+
+
+## Commit NEW files to an EXISTING Repo (read existing* as newly made and empty):
+
+	cd C:/myFiles/myRepo							|	move into repo directory
+	cd myBranch 								|	move into specific branch if need be
+	**Use file explorer to quickly move files into repo for init commit	|	add files to the folder in the repo you are to commit
+	git add *								|	returns the queue of files about to be committed to double check you got everything
+	git status            							|	add all files in the directory to the commit queue
+	git commit -m "init commit, aka: always include commit msg here"	|	commits the files we added to the queue to the repo
+	git remote add origin https://github.com/myOnlineRepo/branch.git	|	creates a connection between local and online repos (the one you started with on your pc, and the one you made in github)
+	git  push -u -f origin main						|	Alternatively you can write master instead of main, depends on which exists in your repo
+										|		-u : makes remote github repo default for existing project
+										|		-f : overwrites existing files on github repo with your local files
+								
+	
+
+## sync local repo with Github (i.e. upload and document changes to the code):
+
+	** assumes you are in the repo's directory and in the main branch or whichever branch you should be doing this in **
+
+	git add <fileName> // git add * 					|	adds the file of name fileName or * version adds all files in the current directory to the queue to commit
+	git status								|	gets files currently in queue, used to check if we added them correctly
+	git commit -m "Init Commit"						|	commit files added earlier to repo, thus all changes to named files are saved and can be pushed to github
+	git remote add origin https:/github.com/MyRepo/myBranch.git		|	connects local instance of repo to github instance of repo	
+	git push -u origin main							|	pushes changes to the files to github
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+End()
+_______________________________________________________________________________________________________________________________________________________________________________________________________________
+_______________________________________________________________________________________________________________________________________________________________________________________________________________
